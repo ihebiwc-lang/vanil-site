@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ваниль — торты и десерты на заказ в Москве</title>
+<meta name="description" content="Кондитерская «Ваниль» в Москве: торты на заказ за 48 часов — свадебные, детские, дни рождения. Натуральные продукты, эскиз бесплатно.">
+<meta property="og:title" content="Ваниль — кондитерская в Москве">
+<meta property="og:description" content="Торты и десерты на заказ за 48 часов. Эскиз бесплатно.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Ваниль","address":{"@type":"PostalAddress","addressLocality":"Москва"},"telephone":"+7 (495) 123-45-67","openingHours":"Mo-Su 09:00-21:00","priceRange":"₽₽"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#FFEDD5; --surface:#FFF7ED; --card:#fff;
+    --ink:#3E2A20; --muted:#8A6F62;
+    --accent:#D96C75; --accent-deep:#B94F59;
+    --accent-soft:rgba(217,108,117,.15);
+    --green:#7A9A5B;
+    --r-s:16px; --r-m:24px; --r-l:32px;
+    --shadow:0 8px 24px rgba(217,108,117,.16);
+    --ease:cubic-bezier(.33,.9,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;background:var(--ground);color:var(--ink);font-size:17px;line-height:1.6;text-wrap:pretty}
+  body.bigtext{font-size:19px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{padding:clamp(48px,7vw,96px) 0;scroll-margin-top:80px}
+  /* header */
+  header{position:sticky;top:12px;z-index:50;margin:12px 12px 0;background:var(--surface);border-radius:999px;box-shadow:var(--shadow)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:12px 28px}
+  .logo{font-weight:800;font-size:22px;text-decoration:none;color:var(--ink)}
+  .logo b{color:var(--accent)}
+  .links a{color:var(--ink);text-decoration:none;font-weight:700;margin-left:26px;min-height:44px;display:inline-flex;align-items:center}
+  .links a:hover{color:var(--accent)}
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;background:var(--accent);color:#fff;font-weight:800;font-size:17px;font-family:inherit;padding:0 36px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;transition:transform .35s var(--ease),filter .35s var(--ease),box-shadow .35s var(--ease)}
+  .btn:hover{filter:brightness(1.07);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .btn:disabled{opacity:.55;cursor:wait;transform:none}
+  .btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.2vw,64px);line-height:1.08;font-weight:800;letter-spacing:-.01em}
+  .script{font-family:'Caveat',cursive;color:var(--accent);font-weight:600}
+  .hero p.lead{color:var(--muted);margin:18px 0 30px;max-width:46ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .badges{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .badge{background:var(--surface);border-radius:999px;padding:8px 18px;font-weight:700;font-size:15px;box-shadow:var(--shadow)}
+  .hero-photo{border-radius:var(--r-l);overflow:hidden;box-shadow:var(--shadow);animation:breathe 4s ease-in-out infinite}
+  .hero-photo img,.card-photo img,.about-photo img{display:block;width:100%;height:100%;object-fit:cover}
+  .hero-photo{aspect-ratio:4/4.4}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
+  /* sections */
+  h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin-top:10px;max-width:60ch}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+  .card{background:var(--card);border-radius:var(--r-m);box-shadow:var(--shadow);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+  .card:hover{transform:translateY(-6px)}
+  .card-photo{aspect-ratio:1/1;overflow:hidden}
+  .card-photo img{transition:transform .6s var(--ease)}
+  .card:hover .card-photo img{transform:scale(1.05)}
+  .card .body{padding:22px 24px 26px}
+  .card h3{font-size:21px}
+  .card .sub{font-size:15px}
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+  .price{font-weight:800;font-size:22px;color:var(--accent)}
+  .mini{background:var(--accent-soft);color:var(--accent-deep);border:none;font:inherit;font-weight:800;min-height:44px;padding:0 22px;border-radius:999px;cursor:pointer;transition:filter .3s}
+  .mini:hover{filter:brightness(.96)}
+  /* about */
+  .band{background:var(--surface);border-radius:var(--r-l);box-shadow:var(--shadow);padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .about-photo{border-radius:var(--r-m);overflow:hidden;aspect-ratio:4/3}
+  .ticks{list-style:none;margin-top:20px;display:grid;gap:12px}
+  .ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+  .tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);font-weight:800;display:flex;align-items:center;justify-content:center}
+  /* reviews */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+  .rev{background:var(--card);border-radius:var(--r-m);box-shadow:var(--shadow);padding:28px}
+  .rev p{font-size:18px}
+  .who{display:flex;align-items:center;gap:14px;margin-top:18px}
+  .ava{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:20px}
+  .ava.g{background:var(--green)}
+  .who small{color:var(--muted)}
+  /* order */
+  .order-band{background:var(--ink);color:#FFF3E8;border-radius:var(--r-l);padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .order-band h2{color:#fff}
+  .order-band .sub{color:#E8CDBD}
+  form{display:grid;gap:14px}
+  label{font-weight:700;font-size:15px}
+  input,textarea,select{font:inherit;padding:14px 20px;min-height:52px;border-radius:var(--r-s);border:2px solid transparent;background:#FFF7ED;color:var(--ink);width:100%}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+  input::placeholder,textarea::placeholder{color:#B49A8C}
+  .form-ok{display:none;background:var(--green);color:#fff;border-radius:var(--r-m);padding:24px;font-weight:700}
+  form.sent{display:none}
+  form.sent + .form-ok{display:block}
+  /* footer */
+  footer{background:var(--surface);border-radius:var(--r-l) var(--r-l) 0 0;box-shadow:var(--shadow);margin-top:24px}
+  .foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;padding:48px 0 24px}
+  .foot h4{margin-bottom:10px}
+  .foot a{color:var(--ink);font-weight:600}
+  .copy{text-align:center;color:var(--muted);padding:0 0 32px;font-size:15px}
+  /* tweaks */
+  #tweaksBtn{position:fixed;right:20px;bottom:20px;z-index:60;min-width:52px;min-height:52px;border-radius:50%;border:none;background:var(--ink);color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:var(--shadow)}
+  #tweaks{position:fixed;right:20px;bottom:84px;z-index:60;background:var(--surface);border-radius:var(--r-m);box-shadow:var(--shadow);padding:22px;width:260px;display:none}
+  #tweaks.open{display:block}
+  #tweaks h4{margin-bottom:12px}
+  #tweaks .row{display:flex;gap:8px;margin-bottom:12px}
+  .swatch{flex:1;min-height:44px;border-radius:12px;border:3px solid transparent;cursor:pointer}
+  .swatch.on{border-color:var(--ink)}
+  .trow{display:flex;align-items:center;justify-content:space-between;font-weight:700;margin-top:10px}
+  .trow input{width:52px;height:30px;accent-color:var(--accent)}
+  @media(max-width:860px){
+    .hero,.band,.order-band,.grid2{grid-template-columns:1fr}
+    .grid3{grid-template-columns:1fr}
+    .links{display:none}
+    .foot{grid-template-columns:1fr}
+    header{border-radius:var(--r-m)}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+  body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important;transition:none!important}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#top">Ваниль<b>.</b></a>
+    <div class="links"><a href="#hits">Десерты</a><a href="#about">О нас</a><a href="#reviews">Отзывы</a><a href="#order">Заказать</a></div>
+  </nav>
+</header>
+
+<div class="wrap" id="top">
+  <section class="hero">
+    <div>
+      <h1>Торты и десерты <span class="script">с любовью</span> на заказ в Москве</h1>
+      <p class="lead">Готовим из натуральных продуктов за 48 часов. Свадебные, детские торты и дни рождения — эскиз оформления бесплатно.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#order">Заказать торт</a>
+        <a class="btn ghost" href="#hits">Смотреть десерты</a>
+      </div>
+      <div class="badges"><span class="badge">48 часов</span><span class="badge">Натуральный состав</span><span class="badge">Эскиз бесплатно</span></div>
+    </div>
+    <div class="hero-photo"><img src="assets/hero.jpg" alt="Шоколадный торт кондитерской Ваниль" loading="eager"></div>
+  </section>
+
+  <section id="hits">
+    <h2>Хиты продаж</h2>
+    <p class="sub">Любимое наших гостей. Полное меню и начинки подскажем по телефону.</p>
+    <div class="grid3">
+      <article class="card">
+        <div class="card-photo"><img src="assets/hit-medovik.jpg" alt="Капкейки с кремом" loading="lazy"></div>
+        <div class="body"><h3>Капкейки, набор 6 шт</h3><p class="sub">Ваниль, шоколад или малина — соберём микс</p>
+        <div class="price-row"><span class="price">от 1 200 ₽</span><button class="mini" data-cake="Капкейки">Хочу</button></div></div>
+      </article>
+      <article class="card">
+        <div class="card-photo"><img src="assets/hit-napoleon.jpg" alt="Торт с клубникой" loading="lazy"></div>
+        <div class="body"><h3>Ягодный торт</h3><p class="sub">2 кг · маскарпоне, свежая клубника</p>
+        <div class="price-row"><span class="price">от 2 400 ₽</span><button class="mini" data-cake="Ягодный торт">Хочу</button></div></div>
+      </article>
+      <article class="card">
+        <div class="card-photo"><img src="assets/hit-cake.jpg" alt="Шоколадный десерт" loading="lazy"></div>
+        <div class="body"><h3>Шоколадный десерт</h3><p class="sub">Бельгийский шоколад, порционный</p>
+        <div class="price-row"><span class="price">от 490 ₽</span><button class="mini" data-cake="Шоколадный десерт">Хочу</button></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="band">
+      <div class="about-photo"><img src="assets/about.jpg" alt="Наша кухня за работой" loading="lazy"></div>
+      <div>
+        <h2>Небольшая мастерская, большие торты</h2>
+        <p class="sub">Печём маленькими партиями и не используем замороженные полуфабрикаты.</p>
+        <ul class="ticks">
+          <li><span class="tick">1</span>Бельгийский шоколад и фермерские сливки</li>
+          <li><span class="tick">2</span>Ягоды без заморозки, в сезон — с грядки</li>
+          <li><span class="tick">3</span>Эскиз торта и дегустация начинок бесплатно</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <h2>Отзывы гостей</h2>
+    <p class="sub">Покажи нам свои праздники — добавим твой отзыв сюда.</p>
+    <div class="grid2">
+      <div class="rev"><p>«Торт на свадьбу получился и красивым, и вкусным — гости до сих пор вспоминают».</p>
+        <div class="who"><span class="ava">А</span><div><b>Анна</b><br><small>свадебный торт, 4 кг</small></div></div></div>
+      <div class="rev"><p>«Заказывали детский с динозаврами — сын был в восторге, всё съели до крошки».</p>
+        <div class="who"><span class="ava g">И</span><div><b>Игорь</b><br><small>детский торт, 2,5 кг</small></div></div></div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="order-band">
+      <div>
+        <h2>Заказать торт</h2>
+        <p class="sub">Оставь заявку — перезвоним в течение 15 минут в рабочее время (9:00–21:00), уточним детали и назовём точную цену.</p>
+        <p class="sub">Нужно срочно? Звони: <a href="tel:+74951234567" style="color:#fff">+7 (495) 123-45-67</a></p>
+      </div>
+      <div>
+        <form id="orderForm" novalidate>
+          <div><label for="fName">Имя</label><input id="fName" name="name" placeholder="Как к тебе обращаться" autocomplete="name"></div>
+          <div><label for="fPhone">Телефон</label><input id="fPhone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel"></div>
+          <div><label for="fCake">Что хочешь?</label>
+            <select id="fCake" name="cake"><option>Торт на день рождения</option><option>Свадебный торт</option><option>Детский торт</option><option>Капкейки</option><option>Ягодный торт</option><option>Шоколадный десерт</option></select></div>
+          <div><label for="fText">Детали</label><textarea id="fText" name="text" rows="3" placeholder="Дата, вес, начинка, оформление…"></textarea></div>
+          <button class="btn" type="submit" id="sendBtn">Отправить заявку</button>
+        </form>
+        <div class="form-ok" id="formOk">Готово! Заявка принята — перезвоним за 15 минут в рабочее время.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div><h4>Ваниль</h4><p>Торты и десерты на заказ в Москве. Ежедневно 9:00–21:00.</p></div>
+    <div><h4>Контакты</h4><p><a href="tel:+74951234567">+7 (495) 123-45-67</a><br><a href="mailto:privet@vanil.msk">privet@vanil.msk</a></p></div>
+    <div><h4>Навигация</h4><p><a href="#hits">Десерты</a> · <a href="#about">О нас</a> · <a href="#reviews">Отзывы</a> · <a href="#order">Заказать</a></p></div>
+  </div>
+  <p class="copy">© 2026 Кондитерская «Ваниль» · демо-сайт</p>
+</footer>
+
+<button id="tweaksBtn" aria-label="Настройки вида">Aa</button>
+<div id="tweaks" role="dialog" aria-label="Tweaks">
+  <h4>Tweaks</h4>
+  <div class="row">
+    <button class="swatch on" data-accent="#D96C75" style="background:#D96C75" aria-label="Малина"></button>
+    <button class="swatch" data-accent="#6B4226" style="background:#6B4226" aria-label="Шоколад"></button>
+    <button class="swatch" data-accent="#7A9A5B" style="background:#7A9A5B" aria-label="Фисташка"></button>
+  </div>
+  <div class="trow"><span>Крупный текст</span><input type="checkbox" id="tBig"></div>
+  <div class="trow"><span>Анимации</span><input type="checkbox" id="tAnim" checked></div>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('orderForm'),btn=document.getElementById('sendBtn'),ok=document.getElementById('formOk');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('fName'),phone=document.getElementById('fPhone');
+    if(!name.value.trim()){name.focus();name.style.borderColor='#D96C75';return}
+    if(phone.value.replace(/\D/g,'').length<10){phone.focus();phone.style.borderColor='#D96C75';return}
+    btn.disabled=true;btn.textContent='Отправляем…';
+    setTimeout(function(){form.classList.add('sent');ok.style.display='block'},900);
+  });
+  document.querySelectorAll('.mini').forEach(function(b){
+    b.addEventListener('click',function(){
+      var s=document.getElementById('fCake');
+      for(var i=0;i<s.options.length;i++){if(s.options[i].text===b.dataset.cake){s.selectedIndex=i;break}}
+      var target=document.getElementById('order');
+      var top=target.getBoundingClientRect().top+window.scrollY-90;
+      window.scrollTo({behavior:'smooth',top:top});
+      document.getElementById('fName').focus({preventScroll:true});
+    });
+  });
+  var panel=document.getElementById('tweaks');
+  document.getElementById('tweaksBtn').addEventListener('click',function(){panel.classList.toggle('open')});
+  document.querySelectorAll('.swatch').forEach(function(s){
+    s.addEventListener('click',function(){
+      document.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('on')});
+      s.classList.add('on');
+      var c=s.dataset.accent,r=document.documentElement.style;
+      r.setProperty('--accent',c);
+      r.setProperty('--accent-soft',c+'26');
+    });
+  });
+  document.getElementById('tBig').addEventListener('change',function(e){document.body.classList.toggle('bigtext',e.target.checked)});
+  document.getElementById('tAnim').addEventListener('change',function(e){document.body.classList.toggle('noanim',!e.target.checked)});
+})();
+</script>
+</body>
+</html>
